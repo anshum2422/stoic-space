@@ -1,20 +1,34 @@
-# stoic-space
+# My Space - NASA Picture Viewer
 
-NASA picture viewer with 3 themes.
-
-## Live
-https://anshum2422.github.io/stoic-space/
+A simple NASA picture viewer with theme switching.
 
 ## Features
-- 3 themes (Stoic / Sakura / Simple)
-- Keyboard shortcuts (S = theme, Space = new pic)
-- Nothing OS font
+
+- Shows NASA's Astronomy Picture of the Day
+- Change Theme button with 5 colors:
+  - Dark (default)
+  - Forest
+  - Sunset
+  - Ocean
+  - Light
+- Clean and minimal design
+
+## How to Use
+
+1. Click "Get Space" to load today's NASA picture
+2. Click "Change Theme" to cycle through 5 color themes
 
 ## Tech
-- HTML, CSS, JS
+
+- HTML, CSS, JavaScript
 - NASA API
 - GitHub Pages
 
 ## Links
-- Live: https://anshum2422.github.io/stoic-space/
-- Repo: https://github.com/anshum2422/stoic-space
+
+- Live: https://anshum2422.github.io/my-space/
+- GitHub: https://github.com/anshum2422/my-space
+
+---
+
+Built by @anshum_2422
