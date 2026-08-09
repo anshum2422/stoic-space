@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 
+        Hey! This is my NASA site.
+        I made it to look at cool space pictures.
+        Nothing fancy, just something I built.
+    -->
+    <title>My Space Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- This font makes it look like a Nothing phone - clean and minimal -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        This is the main box where everything lives.
+        The h1 is my title, the div shows the picture,
+        and the buttons do stuff.
+    -->
+    <div id="app">
+        <h1>☾ My Space Corner</h1>
+        
+        <!-- This is where the NASA picture will show up -->
+        <div id="picture"></div>
+        
+        <!-- These are my buttons - they actually do things! -->
+        <div class="buttons">
+            <button onclick="getPicture()">See the Cosmos</button>
+            <button onclick="switchTheme()">Change Vibe</button>
+        </div>
+    </div>
+
+    <!-- This loads my JavaScript - the brain of the operation -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* ========================================
+   THIS IS MY STYLE SHEET
+   I PICKED THESE COLORS MYSELF
+   ======================================== */
+
+/* 
+   🌿 THEMES - Change this one word!
+   Options: stoic, sakura, simple
+*/
+:root {
+    --theme: stoic;  /* ← Change to sakura or simple */
+}
+
+/* ========================================
+   STOIC THEME - Earthy and calm
+   I like this when I'm feeling philosophical
+   ======================================== */
+[data-theme="stoic"] {
+    --bg: #1a1410;        /* Dark earth background */
+    --card: #241e18;      /* Slightly lighter card */
+    --text: #d4c9b8;      /* Warm off-white text */
+    --muted: #b0a898;     /* Softer text for descriptions */
+    --border: #3d3228;    /* Subtle borders */
+    --button: #3d3228;    /* Button matches borders */
+    --button-hover: #5a4a38; /* Button when you hover */
+    --button-text: #d4c9b8;  /* Button text */
+    --heading: #c4b8a8;   /* Title color */
+    --shadow: rgba(0, 0, 0, 0.6); /* Shadow under card */
+}
+
+/* ========================================
+   SAKURA THEME - Pink and dreamy
+   For when I want something softer
+   ======================================== */
+[data-theme="sakura"] {
+    --bg: #1a0a1a;        /* Dark pink background */
+    --card: #2a1a2a;      /* Slightly lighter */
+    --text: #ffb7c5;      /* Light pink text */
+    --muted: #d48a9a;     /* Softer pink */
+    --border: #4a2a3a;    /* Darker pink border */
+    --button: #3a1a3a;    /* Dark pink button */
+    --button-hover: #5a2a4a; /* Hover color */
+    --button-text: #ffb7c5;  /* Button text */
+    --heading: #ff69b4;   /* Hot pink title */
+    --shadow: rgba(255, 105, 180, 0.2); /* Pink shadow */
+}
+
+/* ========================================
+   SIMPLE THEME - Clean and minimal
+   For when I just want it to look clean
+   ======================================== */
+[data-theme="simple"] {
+    --bg: #f5f5f5;        /* Off-white background */
+    --card: #ffffff;      /* White card */
+    --text: #2d2d2d;      /* Dark text */
+    --muted: #666666;     /* Grey text */
+    --border: #e0e0e0;    /* Light border */
+    --button: #2d2d2d;    /* Dark button */
+    --button-hover: #4a4a4a; /* Hover */
+    --button-text: #ffffff;  /* White text */
+    --heading: #1a1a1a;   /* Black title */
+    --shadow: rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* ========================================
+   THE ACTUAL STYLES
+   Everything below applies to all themes
+   ======================================== */
+
+/* I always start with this - it clears the browser's default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The body - this is the whole page */
+body {
+    background: var(--bg);          /* Changes with theme */
+    color: var(--text);             /* Changes with theme */
+    font-family: 'Space Mono', 'Courier New', monospace;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;              /* At least full screen height */
+    display: flex;                  /* Centers everything */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;      /* Smooth theme changes */
+}
+
+/* This is the main card - where everything lives */
+#app {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    background: var(--card);        /* Card background */
+    border-radius: 12px;            /* Rounded corners */
+    box-shadow: 0 4px 40px var(--shadow);
+    border: 1px solid var(--border);
+    transition: all 0.5s ease;      /* Smooth transitions */
+}
+
+/* My title - I wanted it to look clean and spaced out */
+h1 {
+    color: var(--heading);
+    font-size: 1.6rem;
+    font-weight: 400;               /* Not too bold, not too light */
+    letter-spacing: 3px;            /* Spaced out like a logo */
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+/* The title of the NASA picture */
+h2 {
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/* This is where the picture goes */
+#picture {
+    margin: 20px 0;
+}
+
+/* Images and videos from NASA */
+img, video {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 10px 0;
+}
+
+/* The description text from NASA */
+p {
+    color: var(--muted);
+    line-height: 1.8;               /* Easy to read spacing */
+    font-size: 0.9rem;
+    text-align: left;               /* Left aligned for readability */
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+/* This holds my buttons - puts them side by side */
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* My buttons - I like them pill-shaped */
+button {
+    background: var(--button);
+    color: var(--button-text);
+    border: 1px solid var(--border);
+    padding: 12px 30px;
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;            /* This makes them pill-shaped */
+    cursor: pointer;                /* Shows a hand on hover */
+    transition: all 0.3s ease;      /* Smooth hover effect */
+}
+
+/* What happens when you hover over a button */
+button:hover {
+    background: var(--button-hover);
+    border-color: var(--text);
+    color: #ffffff;                 /* Turns white on hover */
+}
+
+/* ========================================
+   RESPONSIVE - So it works on phones
+   I made this so I can look at space on my phone too
+   ======================================== */
+
+@media (max-width: 600px) {
+    #app {
+        padding: 20px;              /* Less padding on small screens */
+    }
+    
+    h1 {
+        font-size: 1.2rem;          /* Smaller title */
+        letter-spacing: 2px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.7rem;
+        width: 100%;                /* Full width buttons on phone */
+    }
+    
+    .buttons {
+        flex-direction: column;      /* Stack buttons vertically */
+    }
+}
