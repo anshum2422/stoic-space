@@ -1,18 +1,19 @@
 const API_KEY = '6ilc3Xmd1xSVDw337pNafxOFhwCiNew3EO6Y4GKp';
 
 function getPicture() {
-    document.getElementById('picture').innerHTML = 'Loading...';
+    const pictureDiv = document.getElementById('picture');
+    pictureDiv.innerHTML = 'Loading...';
 
     fetch('https://api.nasa.gov/planetary/apod?api_key=' + API_KEY)
         .then(response => response.json())
         .then(data => {
-            document.getElementById('picture').innerHTML =
+            pictureDiv.innerHTML =
                 '<h2>' + data.title + '</h2>' +
-                '<img src="' + data.url + '">' +
+                '<img src="' + data.url + '" style="max-width:100%; border-radius:10px;">' +
                 '<p>' + data.explanation + '</p>';
         })
         .catch(error => {
-            document.getElementById('picture').innerHTML = 'Error: ' + error.message;
+            pictureDiv.innerHTML = 'Error: ' + error.message;
             console.error('Error:', error);
         });
 }
@@ -23,12 +24,10 @@ function changeTheme() {
     const current = body.style.background;
 
     if (current === '#0a0a1a' || current === '') {
-        // Light theme
         body.style.background = '#f5f0eb';
         body.style.color = '#2d2d2d';
         picture.style.background = '#ffffff';
     } else {
-        // Dark theme
         body.style.background = '#0a0a1a';
         body.style.color = '#d4d4d4';
         picture.style.background = '#1a1a2a';
