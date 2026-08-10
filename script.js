@@ -1,4 +1,4 @@
-const API_KEY = '6ilc3Xmd1xSVDw337pNafxOFhwCiNew3EO6Y4GKp';
+const API_KEY = 'DEMO_KEY';
 
 function getPicture() {
     const pictureDiv = document.getElementById('picture');
